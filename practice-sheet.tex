@@ -1,0 +1,20 @@
+\documentclass{article}
+\def \insidegridcolor {gray}
+\def \cellwidth {1}
+\usepackage{tikz}
+\usepackage[margin=0.5in]{geometry}
+\begin{document}
+\pagenumbering{gobble}
+\begin{tikzpicture}
+\foreach \y in {0,...,15}
+\foreach \x in {0,...,17}
+{
+\draw[\insidegridcolor] (0+\x,0.5+\y*1.5) -- (1+\x,1.5+\y*1.5);
+\draw[\insidegridcolor] (1+\x,0.5+\y*1.5) -- (0+\x,1.5+\y*1.5);
+\draw[\insidegridcolor] (0.5+\x,0.5+\y*1.5) -- (0.5+\x,1.5+\y*1.5);
+\draw[\insidegridcolor] (0+\x,1+\y*1.5) -- (1+\x,1+\y*1.5);
+\draw (0+\x,0+\y*1.5) -- (1+\x,0+\y*1.5) -- (1+\x,0+\y*1.5) -- (1+\x,1.5+\y*1.5) -- (0+\x,1.5+\y*1.5) -- (0+\x,0+\y*1.5);
+\draw (0+\x,0.5+\y*1.5) -- (1+\x,0.5+\y*1.5);
+}
+\end{tikzpicture}
+\end{document}
