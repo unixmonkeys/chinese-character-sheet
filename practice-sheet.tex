@@ -1,6 +1,34 @@
 \documentclass{article}
 \def \insidegridcolor {gray}
 \def \cellwidth {1}
+% D--H--C
+% |     |
+% I  X  J
+% |     |
+% E--G--F
+% |     |
+% A-----B
+% point A is at (0,0)
+\def \pointA {(0+\x,0+\y*1.5)}
+% point B is at (1,0)
+\def \pointB {(1+\x,0+\y*1.5)}
+% point C is at (1,1.5)
+\def \pointC {(1+\x,1.5+\y*1.5)}
+% point D is at (0,1.5)
+\def \pointD {(0+\x,1.5+\y*1.5)}
+% point E is at (0,0.5)
+\def \pointE {(0+\x,0.5+\y*1.5)}
+% point F is at (1,0.5)
+\def \pointF {(1+\x,0.5+\y*1.5)}
+% point G is at (0.5,0.5)
+\def \pointG {(0.5+\x,0.5+\y*1.5)}
+% point H is at (1.5,1.5)
+\def \pointH {(0.5+\x,1.5+\y*1.5)}
+% point I is at (0,1.5)
+\def \pointI {(0+\x,1+\y*1.5)}
+% point J is at (1,1)
+\def \pointJ {(1+\x,1+\y*1.5)}
+
 \usepackage{tikz}
 \usepackage[margin=0.5in]{geometry}
 \begin{document}
@@ -9,12 +37,16 @@
 \foreach \y in {0,...,15}
 \foreach \x in {0,...,17}
 {
-\draw[\insidegridcolor] (0+\x,0.5+\y*1.5) -- (1+\x,1.5+\y*1.5);
-\draw[\insidegridcolor] (1+\x,0.5+\y*1.5) -- (0+\x,1.5+\y*1.5);
-\draw[\insidegridcolor] (0.5+\x,0.5+\y*1.5) -- (0.5+\x,1.5+\y*1.5);
-\draw[\insidegridcolor] (0+\x,1+\y*1.5) -- (1+\x,1+\y*1.5);
-\draw (0+\x,0+\y*1.5) -- (1+\x,0+\y*1.5) -- (1+\x,0+\y*1.5) -- (1+\x,1.5+\y*1.5) -- (0+\x,1.5+\y*1.5) -- (0+\x,0+\y*1.5);
-\draw (0+\x,0.5+\y*1.5) -- (1+\x,0.5+\y*1.5);
+% Draw the X
+\draw[\insidegridcolor] \pointE -- \pointC;
+\draw[\insidegridcolor] \pointF -- \pointD;
+% Draw the +
+\draw[\insidegridcolor] \pointG -- \pointH;
+\draw[\insidegridcolor] \pointI -- (1+\x,1+\y*1.5);
+% Draw the outside box
+\draw \pointA -- \pointB -- \pointC -- \pointD -- \pointA;
+% Draw the line separating the character box from the pinyin box
+\draw \pointE -- \pointF;
 }
 \end{tikzpicture}
 \end{document}
