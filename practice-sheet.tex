@@ -1,6 +1,6 @@
 \documentclass{article}
-\def \insidegridcolor {gray}
-\def \cellwidth {1.5}
+\def \insidegridcolor {lightgray}
+\def \cellwidth {1.1}
 \def \cellheight {\cellwidth*1.5}
 % D--H--C
 % |     |
@@ -35,15 +35,15 @@
 \begin{document}
 \pagenumbering{gobble}
 \begin{tikzpicture}
-\foreach \y in {0,...,10}
-\foreach \x in {0,...,11}
+\foreach \y in {0,...,14}
+\foreach \x in {0,...,15}
 {
 % Draw the X
-\draw[\insidegridcolor] \pointE -- \pointC;
-\draw[\insidegridcolor] \pointF -- \pointD;
+\draw[\insidegridcolor,dashed,ultra thin] \pointE -- \pointC;
+\draw[\insidegridcolor,dashed,ultra thin] \pointF -- \pointD;
 % Draw the +
-\draw[\insidegridcolor] \pointG -- \pointH;
-\draw[\insidegridcolor] \pointI -- \pointJ;
+\draw[\insidegridcolor,dashed,ultra thin] \pointG -- \pointH;
+\draw[\insidegridcolor,dashed,ultra thin] \pointI -- \pointJ;
 % Draw the outside box
 \draw \pointA -- \pointB -- \pointC -- \pointD -- \pointA;
 % Draw the line separating the character box from the pinyin box
