@@ -1,6 +1,6 @@
 \documentclass{article}
 \def \insidegridcolor {lightgray}
-\def \cellwidth {1.1}
+\def \cellwidth {1.0}
 \def \cellheight {\cellwidth*1.5}
 % D--H--C
 % |     |
@@ -35,8 +35,8 @@
 \begin{document}
 \pagenumbering{gobble}
 \begin{tikzpicture}
-\foreach \y in {0,...,14}
-\foreach \x in {0,...,15}
+\foreach \y in {0,...,15}
+\foreach \x in {0,...,17}
 {
 % Draw the X
 \draw[\insidegridcolor,dashed,ultra thin] \pointE -- \pointC;
